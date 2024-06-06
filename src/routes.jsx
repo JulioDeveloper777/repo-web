@@ -69,19 +69,17 @@ import LoginPage from "./pages/login/index";
 import Pagenotfound from "./pages/Pagenotfound/index";
 import { AuthProvider } from "./contexts/auth";
 
-function router() {
+function Router() {
   return (
-    <AuthProvider>
-      <RouterProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" index element={<MainPage />} />
-            <Route path="/login" element={<LoginPage />} />
-          </Routes>
-        </BrowserRouter>
-      </RouterProvider>
-    </AuthProvider>
+    <BrowserRouter>
+      <AuthProvider>
+        <Routes>
+          <Route path="/" index element={<MainPage />} />
+          <Route path="/login" element={<LoginPage />} />
+        </Routes>
+      </AuthProvider>
+    </BrowserRouter>
   );
 }
 
-export default router;
+export default Router;
